@@ -1,0 +1,335 @@
+# Compiler for C++ : G++
+
+# Why to use C++:
+~ Fast programs
+~ More control over system programs
+~ Memory management
+~ High performance
+
+# #include<iostream> : Used for input/output and more...
+
+# Datatypes in C++:
+~ Built-in: int, float, char, double, bool
+~ User-defined: struct, union, Enum
+~ Derived: Array, Pointers, Functions
+
+# The sign "<<" is called insertion operator
+  The sign ">>" is called extraction operator
+
+# %d is rarely used in C++, only when you're using C-style input/output, like with printf() from the C standard library (<cstdio> or <stdio.h>).
+
+# Local variables has precedence(higher priority) as compared to Global variables.
+
+# C++ comes with libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as streams.
+~ Input Stream: Direction of flow of bytes takes place from input device (for example
+Keyboard) to the main memory.
+~ Output Stream: Direction of flow of bytes takes place from main memory to the output device (for example Display)
+
+# There are two types of header files:
+1. System header files: It comes with the compiler
+	#include<iostream>
+2. User defined header files: It is written by the programmer
+	#include "this.h" //--> This will produce an error if this.h is not present 	in the current directory.
+
+# Reference Variable: 
+Reference variables can be defined as another name for an already existing variable. These are also called an alias. For example, let us say we have a variable with the name of "sum", but we also want to use the same variable with the name of "add", to do that we will make a reference variable with the name of "add".
+
+# Typecasting: Typecasting can be defined as converting one data type into another. 
+
+# Manipulators: In C++ programming, language manipulators are used in the formatting of output. The two most commonly used manipulators are: "endl" and "setw".
+~ "endl" is used for the next line.
+~ "setw" is used to specify the width of the output. (Used with #include<iomanip>)
+
+# Unions in C++:
+Unions are similar to structures but they provide better memory management then structures. Unions use shared memory so only 1 variable can be used at a time.
+We can only use 1 variable at a time otherwise the compiler will give us a garbage value
+The compiler chooses the data type which has maximum memory for the allocation.
+
+# Inline Functions in C++:
+Inline functions are used to reduce the function call. When one function is being called multiple times in the program it increases the execution time, so inline function is used to reduce time and increase program efficiency.
+Inline functions are considered to be used when the function is small otherwise it will not perform well.
+Asks the compiler to copy code into program instead of using function call.
+Not recommended to use with static variables.
+
+# Default arguments are always written on the rightmost side.
+
+# Function overloading is a process to make more than one function with the same name but different parameters, numbers, or sequence.
+
+# Classes in C++:
+Classes are user-defined data-types and are a template for creating objects. Classes consist of variables and functions which are also called class members.
+
+# Public Access Modifier in C++:
+All the variables and functions declared under public access modifier will be available for everyone. They can be accessed both inside and outside the class. Dot (.) operator is used in the program to access public data members directly.
+
+# Private Access Modifier in C++:
+All the variables and functions declared under a private access modifier can only be used inside the class. They are not permissible to be used by any object or function outside the class.
+
+# Structures in C++ are typedefed already.
+
+# You can declare objects along with the class declarion like this:
+ 	class Employee{
+ 	// Class definition
+ 	} harry, rohan, lovish;
+where, harry, rohan and lovish are objects of class Employee.
+
+# Objects Memory Allocation in C++:
+The way memory is allocated to variables and functions of the class is different even though they both are from the same class.
+
+-->	The memory is only allocated to the variables of the class when the object is 	created.
+-->	The memory is not allocated to the variables when the class is declared.
+-->	At the same time, single variables can have different values for different 	objects, so every object has an individual copy of all the variables of the 	class. 
+
+-->	The memory is allocated to the function only once, when the class is 	declared. So the objects don’t have individual copies of functions. Only one 	copy is shared among each object.
+
+# Constructors in C++:
+A constructor is a special member function with the same name as the class. The constructor doesn’t have a return type. Constructors are used to initialize the objects of its class. Constructors are automatically invoked whenever an object is created.
+
+Important Characteristics of Constructors in C++:
+
+-->	A constructor should be declared in the public section of the class
+-->	They are automatically invoked whenever the object is created
+-->	They cannot return values and do not have return types
+-->	It can have default arguments
+-->	We cannot refer to their address
+
+# Dynamic Initialization of Objects Using Constructors:
+The dynamic initialization of the object means that the object is initialized at the runtime.  Dynamic initialization of the object using a constructor is beneficial when the data is of different formats.
+
+# Copy Constructor in C++:
+A copy constructor is a type of constructor that creates a copy of another object. If we want one object to resemble another object we can use a copy constructor. If no copy constructor is written in the program compiler will supply its own default copy constructor.
+
+# Const functions:
+The idea of const functions is not to allow them to modify the object on which they are called.
+
+-->	const function should be a member function.
+	(const function must be a part of any class, otherwise it will throw error.)
+
+
+# Inheritance:
+Inheritance in Object Oriented Programming can be described as a process of creating new classes from existing classes.
+
+Inheritance in C++ an Overview:
+--> 	Reusability is a very important feature of OOPs
+--> 	In C++ we can reuse a class and add additional features to it
+--> 	Reusing classes saves time and money
+--> 	Reusing already tested and debugged classes will save a lot of effort of 	developing and debugging the same thing again
+
+What is Inheritance in C++?
+--> The concept of reusability in C++ is supported using inheritance
+--> We can reuse the properties of an existing class by inheriting it
+--> The existing class is called a base class
+--> The new class which is inherited from the base class is called a derived class
+--> Reusing classes saves time and money
+
+Inheritance establishes an "is a" relationship between classes:
+– A poodle is a dog
+– A car is a vehicle
+
+# Derived Class syntax:
+class {{derived class-name}} : {{visibility-mode}} {{base class-name}}
+{
+	class members, functions etc...
+}
+
+NOTE:
+--> Default visibility mode is private.
+--> Private members are never inherited.
+--> Public Visibility Mode: Public members of the base class becomes Public members 	of the derived class.
+--> Private Visibility Mode: Public members of the base class become private members 	of the derived class.
+
+# If we are inheriting B from A and C from B:[ A--->B--->C ]:
+	1. A is the base class for B and B is the base class for C
+	2. A-->B-->C is called Inheritance Path
+
+# Syntax for inheriting in multiple inheritance:
+	class {{DerivedC}} : {{visibility-mode basel}}, {{visibility-mode base2}}
+	{
+		//Class body of class "DerivedC"
+	};
+
+
+# Constructors in Inheritance:
+
+Constructors in Derived Class in C++:
+We can use constructors in derived classes in C++
+-->	If the base class constructor does not have any arguments, there is no need 	for any constructor in the derived class
+--> 	But if there are one or more arguments in the base class constructor, derived 	class need to pass argument to the base class constructor
+-->	If both base and derived classes have constructors, base class constructor is 	executed first
+
+Constructors in Multiple and Multilevel Inheritances:
+In Multiple inheritance, base classes are constructed in the order in which they are written in the Derived class declaration.
+For example:
+If there are three classes “A”, “B”, and “C”, and the class “C” is inheriting classes “A” and “B”.
+--> class C : public A, public B: A will be constructed first
+--> class C : public B, public A: B will be constructed first
+(No matter which class was created first)
+
+In Multilevel inheritance, the constructors are executed in the order of inheritance. For example:
+If there are three classes “A”, “B”, and “C”, and the class “B” is inheriting classes “A” and the class “C” is inheriting classes “B”. Then the constructor will run according to the order of inheritance such as the constructor of class “A” will be called first then the constructor of class “B” will be called and at the end constructor of class “C” will be called.
+
+
+Special Syntax:
+C++ supports a special syntax for passing arguments to multiple base classes.
+-->	The constructor of the derived class receives all the arguments at once and 	then will pass the call to the respective base classes
+-->	The body is called after the constructors is finished executing
+Syntax:
+Derived-Constructor (arg1, arg2, arg3….): Base 1-Constructor (arg1,arg2),							Base 2-Constructor(arg3,arg4)
+	{
+		….
+	}
+
+Special Case of Virtual Base Class:
+-->	The constructors for virtual base classes are invoked before a non-virtual 	base class
+-->	If there are multiple virtual base classes, they are invoked in the order 	declared
+-->	Any non-virtual base class are then constructed before the derived class 	constructor is executed
+
+
+# this keyword: 
+this is a keyword which is a pointer which points to the object which invokes the member function.
+
+# cin.getline & getline:
+-->	cin.getline(char*, int):
+	C-style function that reads a line into a char[] or char*
+
+-->	getline(cin, string):
+	C++-style function that reads a line into a std::string
+
+
+# Polymorphism in C++:
+“Poly” means several and “morphism” means form. So we can say that polymorphism is something that has several forms or we can say it as one name and multiple forms. There are two types of polymorphism:
+
+--> Compile-time polymorphism:
+In compile-time polymorphism, it is already known which function will run. Compile-time polymorphism is also called early binding, which means that you are already bound to the function call and you know that this function is going to run. In compile time polymorphism, the compiler knows which address to point, like if we have to show() fxns, the compiler would know to which show() fxn address it has to point. This is called early binding. 
+
+There are two types of compile-time polymorphism:
+
+Function Overloading:
+This is a feature that lets us create more than one function and the functions have the same names but their parameters need to be different. If function overloading is done in the program and function calls are made the compiler already knows that which functions to execute.
+
+Operator Overloading:
+This is a feature that lets us define operators working for some specific tasks. For example, we can overload the operator “+” and define its functionality to add two strings. Operator loading is also an example of compile-time polymorphism because the compiler already knows at the compile time which operator has to perform the task.
+
+Run time polymorphism:
+In the run-time polymorphism, the compiler doesn’t know already what will happen at run time. Run time polymorphism is also called late binding. The run time polymorphism is considered slow because function calls are decided at run time. Run time polymorphism can be achieved from the virtual function.
+
+Virtual Function:
+A function that is in the parent class but redefined in the child class is called a virtual function. “virtual” keyword is used to declare a virtual function.
+
+
+# Rules for virtual functions:
+-->	They cannot be static
+-->	They are accessed by object pointers of Base Class pointing to objects 	of Derived class
+-->	Virtual functions can be a friend of another class
+-->	A virtual function in the base class might not be used.
+-->	If a virtual function is defined in a base class, there is no 	necessity of redefining it in the derived class
+
+# Abstract Base Class in C++:
+--> We cant create any objects of an Abstract class.
+Abstract base class is a class that has at least one pure virtual function in its body. The classes which are inheriting the base class must need to override the virtual function of the abstract class otherwise compiler will throw an error.
+The main motive of the abstract class is to create a base abstract class for the child classes, which will use the abstract class.
+The Abstract class is not designed to run.
+It is designed to access the child classes through base class pointers.
+
+# Pure Virtual Functions in C++:
+Pure virtual function is a function that doesn’t perform any operation and the function is declared by assigning the value 0 to it. Pure virtual functions are declared in abstract classes.
+
+-->	It is not necessary to override a Virtual function of base class.
+-->	It is compulsory to override a Pure Virtual function of base class.
+
+# A class that contains a virtual function is referred to as a Polymorphic class.
+
+
+# File I/O in C++:
+The file is a patent of data which is stored in the disk. Anything written inside the file is called a patent.
+For example: “#include” is a patent. The text file is the combination of multiple types of characters, for example, semicolon “;” is a character.
+
+The computer read these characters in the file with the help of the ASCII code. Every character is mapped on some decimal number. For example, ASCII code for the character “A” is “65” which is a decimal number. These decimal numbers are converted into a binary number to make them readable for the computer because the computer can only understand the language of “0” and “1”.
+
+The reason that computers can only understand binary numbers is that a computer is made up of switches and switches only perform two operations “true” or “false”.
+
+File Input and Output in C++:
+The file can be of any type whether it is a file of a C++ program, file of a game, or any other type of file. There are two main operations which can be performed on files
+
+--> Read File
+--> Write File
+
+# Reading and Writing Files:
+These are some useful classes for working with files in C++
+(included using #include<fstream>)
+
+fstreambase
+ifstream --> derived from fstreambase (input fstream)
+ofstream --> derived from fstreambase (output fstream)
+
+In order to work with files in C++, you will have to open it. Primarily, there are 2 ways to open a file:
+--> Using the constructor
+--> Using the member function open() of the class
+
+# If we want to Write to a file which is not created, The file will automatically be created on running the program.
+# If we try to Read from a file which does not exist, then nothing will be read into the program and no new file will be created automatically.
+
+
+# Templates:
+
+What is a template in C++ programming?
+A template is believed to escalate the potential of C++ several fold by giving it the ability to define data types as parameters making it useful to reduce repetitions of the same declaration of classes for different data types. Declaring classes for every other data type(which if counted is way too much) in the very first place violates the DRY( Don’t Repeat Yourself) rule of programming and on the other doesn't completely utilise the potential of C++.
+
+It is very analogous to when we said classes are the templates for objects, here templates itself are the templates of the classes. That is, what classes are for objects, templates are for classes.
+
+Why templates?
+--> DRY Rule:
+To understand the reason behind using templates, we will have to understand the effort behind declaring classes for different data types. Suppose we want to have a vector for each of the three(can be more) data types, int, float and char. Then we’ll obviously write the whole thing again and again making it awfully difficult. This is where the saviour comes, the templates. It helps parametrizing the data type and declaring it once in the source code suffice. Very similar to what we do in functions. It is because of this, also called, ‘parameterized classes’.
+
+--> Generic Programming:
+It is called generic, because it is sufficient to declare a template once, it becomes general and it works all along for all the data types. We had to copy the same thing again and again for different data types, but a template solves it all.
+
+--> Saves Time | Useful in Competitive Programming:
+Templates are believed to be very useful for people who pursue competitive programming. It makes their work several folds easier. It gives them an edge over others. It is a must because it saves you a lot of time while programming.
+
+
+# STL (Standard Template Library):
+
+Why is this important for competitive programmers?
+Competitive programming is a part of various environments, be it job interviews, coding contests and all, and if you’re in one of those environments, you’ll be given limited time to code your program.
+So, suppose you want in your program, a resizable array, or sort an array or any other data structure or search for some element in your container.
+You will always try to code a function which will execute the above mentioned things, and end up losing a great amount of time. But here is when you will use STL.
+
+STL:
+An STL is a library of generic functions and classes which saves you time and energy which you would have spent constructing for your use. This helps you reuse these well tested classes and functions umpteenth number of times according to your own convenience. 
+To put this simply, STL is used because it is not a good idea to reinvent something which is already built and can be used to innovate things further. Suppose you go to a company who builds cars, they will not ask you to start from scratch, but to start from where it is left. This is the basic idea behind using STL.
+
+Key Features of STL:
+--> Generic Programming: STL uses templates to provide generic data structures and algorithms.
+--> Efficiency: STL algorithms and containers are highly optimized for performance.
+--> Type Safety: STL templates enforce type compatibility at compile-time.
+--> Reusability: The same code can be reused for different data types without modification.
+
+# Containers hold the data, Iterators provide a way to access the data, and algorithms perform operations on the data.
+
+
+# Function Objects (Functors):
+A Function object is a function wrapped in a class so that it is available as an object.
+That is, we can then use a function as an object. The question that might have been raised in your mind would be, why to substitute a function with an object? The answer is to make them all usable in an Object-Oriented Programming paradigm.
+--> Library: #include<functional>
+
+
+# Algorithms in STL:
+--> sort: Sorts the elements in Ascending order
+--> find: Finds the first occurrence of a value in a range
+--> count: Count occurrences of a specific value in a range
+--> reverse: Reverse the order of elements in a range
+--> accumulate: Computes the sum of elements in a range (#include<numeric> required)
+
+
+# Why divide(30,13) is Not Executed:
+When divide(20,0) is called, y == 0, so throw y; executes.
+This throws an exception, immediately transferring control to the catch block.
+After an exception is caught, the rest of the try block is skipped.
+Hence, divide(30,13) is not executed.
+✅ Tip:
+To ensure all divide() calls run independently, wrap each one in its own try-catch block.
+
+# More than one catch statement can be associated with a try block.
+When an exception is thrown, the exception handlers are searched in order for a match.
+• The first handler that yields a match is executed.
+• If several catch statement matches the type of an exception the first handler that matches the exception type is executed.
